@@ -69,6 +69,20 @@ Key tables from Supabase:
 - `cases` - Viewing request submissions
 - `system_settings` - Dynamic content configuration
 
+## Supabase MCP Server
+
+This project uses the Supabase MCP server for direct database operations. The MCP server is configured and available for:
+- Direct SQL queries to the Supabase database
+- Schema inspection and table management
+- Real-time database operations
+- Database migrations and updates
+
+Use the MCP server tools when you need to:
+- Query or update database tables directly
+- Inspect database schema
+- Test database operations
+- Debug database-related issues
+
 ## Environment Variables
 
 Required in `.env.local`:
@@ -79,6 +93,44 @@ SUPABASE_SERVICE_ROLE_KEY=
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
 NEXT_PUBLIC_BASE_URL=https://map.galvanic.ai
 ```
+
+## AWS Deployment
+
+### AWS SSO Configuration
+This project uses AWS SSO with the profile `claude-dev-profile` which has administrator permissions.
+
+### AWS CLI Commands
+```bash
+# Configure AWS SSO (if not already done)
+aws configure sso
+
+# Login to AWS SSO
+aws sso login --profile claude-dev-profile
+
+# Verify access
+aws sts get-caller-identity --profile claude-dev-profile
+
+# Deploy to Amplify
+aws amplify push --profile claude-dev-profile
+```
+
+### AWS Amplify Setup
+```bash
+# Initialize Amplify in the project
+amplify init --profile claude-dev-profile
+
+# Add hosting
+amplify add hosting
+
+# Deploy
+amplify publish --profile claude-dev-profile
+```
+
+### Important AWS Notes
+- Always use `--profile claude-dev-profile` for AWS CLI commands
+- The profile has administrator permissions for all AWS services
+- Amplify deployment is configured for automatic builds from the main branch
+- CloudFront distribution is set up for global CDN delivery
 
 ## Key Implementation Notes
 

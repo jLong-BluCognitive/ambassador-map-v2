@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XGrid Ambassador Map - Embed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background: #263238;
+            color: #aed581;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        #xgrid-ambassador-map {
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>XGrid Ambassador Map - Embed Test Page</h1>
+
+        <div class="info">
+            <h2>How to Embed</h2>
+            <p>To embed the XGrid Ambassador Map on your website, simply add this script tag:</p>
+            <div class="code-block">
+                &lt;script src="https://main.d3d9zn9ueor3c9.amplifyapp.com/embed.js"&gt;&lt;/script&gt;
+            </div>
+            <p>The widget will automatically create a container and load the map.</p>
+        </div>
+
+        <div class="info">
+            <h2>Custom Container (Optional)</h2>
+            <p>You can also create a custom container with specific dimensions:</p>
+            <div class="code-block">
+                &lt;div id="xgrid-ambassador-map" style="width: 100%; height: 600px;"&gt;&lt;/div&gt;<br>
+                &lt;script src="https://main.d3d9zn9ueor3c9.amplifyapp.com/embed.js"&gt;&lt;/script&gt;
+            </div>
+        </div>
+
+        <h2>Live Demo</h2>
+        <p>The map should appear below:</p>
+
+        <!-- This is where the map will be embedded -->
+        <div id="xgrid-ambassador-map" style="width: 100%; height: 600px;"></div>
+
+        <!-- Embed script - for local testing, change to localhost:3002/embed.js -->
+        <script src="/embed.js"></script>
+    </div>
+</body>
+</html>
